@@ -1,0 +1,550 @@
+body {
+    background-color: #e6e6e4;
+}
+
+/*-- Style for Login-Form--*/
+
+.position-login-form {
+    margin-top: 50%;
+}
+
+#slick-login {
+    width: 100%;  
+
+}
+
+
+#slick-login label {
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-weight: bold;
+    color: #333333;
+    text-transform: uppercase;
+
+}
+
+#slick-login select {
+    width: 100%;
+    height: 60px;
+    font-family: "Open Sans";
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#slick-login input {
+    width: 100%;
+    height: 60px;
+    font-family: "Open Sans";
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+
+}
+
+
+#password {
+    width: 100%;
+    height: 60px;
+    font-family: "Open Sans";
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+
+}
+
+#submit {
+    width: 60%;
+    height: 60px;
+    font-family: "Open Sans";
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #ff0000;
+    border-radius: 10px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+#submit:hover {
+
+    height: 60px;
+    font-family: "Open Sans";
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #fd7474;
+    border-radius: 10px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+/*-- Style for page Load_tasks--*/
+
+.info_card {
+    width: 100%;
+    height: 110px;
+    background-color: #fff;
+    border-radius: 10px;
+    -webkit-box-shadow: 17px 18px 26px -12px rgba(0,0,0,0.75);
+    -moz-box-shadow: 17px 18px 26px -12px rgba(0,0,0,0.75);
+    box-shadow: 7px 8px 6px -22px rgba(0,0,0,0.35);
+}
+
+
+
+.info_card img {
+    width: 90px;
+    float: left;
+    margin: 10px 5px;
+}
+
+.info_card p {
+    font-family: "Open Sans";
+    font-size: 16px;
+    margin-right: 5px;
+    padding-top: 0.1px;
+}
+
+.list_tasks {
+    font-family: Calibri;
+    font-weight: bold;
+    font-size: 34px;
+    text-transform: uppercase;
+    margin-top: 70px;
+}
+
+hr {
+    width: 70%;
+    background-color: #ff0000;
+    height: 2px;
+    margin-left: 0px;
+    margin-top: -5px;
+}
+
+.load_gif {
+    width: 20%;
+}
+
+
+#load_tasks {
+    width: 100%;
+}
+
+#load_tasks label {
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-weight: bold;
+    color: #333333;
+    text-transform: uppercase;
+}
+
+#load_tasks select {
+    width: 100%;
+    height: 60px;
+    font-family: "Open Sans";
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#load_tasks input {
+  width: 100%;
+  height: 60px;
+  font-family: "Open Sans";
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10px;
+}
+
+#submit_load {
+    width: 80%;
+    height: 60px;
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #ff0000;
+    border-radius: 10px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+/*-- Style for View_tasks--*/
+.info_card_view {
+    width: 100%;
+    height: 120px;
+    background-color: #fff;
+    border-radius: 10px;
+    -webkit-box-shadow: 17px 18px 26px -12px rgba(0,0,0,0.75);
+    -moz-box-shadow: 17px 18px 26px -12px rgba(0,0,0,0.75);
+    box-shadow: 17px 18px 26px -12px rgba(0,0,0,0.75);
+}
+
+.info_card_view img {
+    width: 90px;
+    float: left;
+    margin: 15px 5px;
+}
+
+.info_card_view p {
+    font-family: "Open Sans";
+    font-size: 16px;
+    margin-right: 5px;
+    padding-top: 0.1px;
+}
+
+.count_tasks {
+  color:red;
+  font-weight: bold;
+}
+
+.all_tasks {
+  width: 100%;
+  margin-top: -30px;
+}
+
+.all_tasks ul {
+  list-style: none;
+  font-family: Calibri;
+  font-size: 24px;
+}
+
+.all_tasks ul li {
+padding: 10px;
+}
+
+
+.all_tasks ul a {
+text-decoration: none;
+color: #333;
+}
+
+.all_tasks ul a:hover div{
+text-decoration: none;
+color: #333;
+background-color: #fd7474;
+border:none;
+}
+
+
+.all_tasks_added {
+  width: 100%;
+  margin-top: -30px;
+
+}
+
+.all_tasks_added ul {
+  list-style: none;
+  font-family: Calibri;
+  font-size: 24px;
+
+}
+
+.all_tasks_added ul li {
+padding: 10px;
+}
+
+
+.all_tasks_added ul a {
+text-decoration: none;
+color: #333;
+}
+
+.all_tasks_added ul a:hover div{
+text-decoration: none;
+color: #000;
+background-color:  #00cc99;
+border:none;
+}
+
+.link_tasks {
+  width: 108%;
+  height: 120px;
+  border: 1px solid #fff;
+  background-color: #fff;
+  margin: 15px -40px;
+  padding: 0px 5px;
+  border-radius: 10px;
+  -webkit-box-shadow: 17px 18px 26px -12px rgba(0,0,0,0.75);
+  -moz-box-shadow: 17px 18px 26px -12px rgba(0,0,0,0.75);
+  box-shadow: 17px 18px 26px -12px rgba(0,0,0,0.75);
+}
+
+.cyrcle_count {
+  text-align:center;
+  width: 70px;
+	height: 70px;
+	background: #e04622;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+  margin-left:480px;
+  margin-top: -85px;
+}
+
+.cyrcle_count span {
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+  margin-top: 30px;
+}
+
+/*-- Style for View_abonents_tasks--*/
+
+.info_card_abonents {
+    width: 100%;
+    height: 165px;
+    background-color: #fff;
+    border-radius: 10px;
+    -webkit-box-shadow: 17px 18px 26px -12px rgba(0,0,0,0.75);
+    -moz-box-shadow: 17px 18px 26px -12px rgba(0,0,0,0.75);
+    box-shadow: 17px 18px 26px -12px rgba(0,0,0,0.75);
+}
+
+.info_card_abonents img {
+    width: 90px;
+    float: left;
+    margin: 30px 5px;
+}
+
+.info_card_abonents p {
+    font-family: "Open Sans";
+    font-size: 16px;
+    margin-right: 5px;
+    padding-top: 0.1px;
+}
+
+.link_tasks_abonents {
+  width: 108%;
+  height: 180px;
+  border: 1px solid #fff;
+  background-color: #fff;
+  margin: 15px -40px;
+  padding: 0px 0px;
+  border-radius: 10px;
+  -webkit-box-shadow: 17px 18px 26px -12px rgba(0,0,0,0.75);
+  -moz-box-shadow: 17px 18px 26px -12px rgba(0,0,0,0.75);
+  box-shadow: 17px 18px 26px -12px rgba(0,0,0,0.75);
+}
+
+.link_tasks_abonents li{
+  font-size: 18px;
+}
+
+.cyrcle_count_abonents {
+  text-align:center;
+  width: 70px;
+	height: 70px;
+	background: #e04622;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+  margin-left:480px;
+  margin-top: -125px;
+}
+
+.cyrcle_count_abonents span {
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+  margin-top: 30px;
+}
+
+
+.cyrcle_count_added_abonents {
+  text-align:center;
+  width: 70px;
+  height: 70px;
+  background: #00cc00;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  margin-left:480px;
+  margin-top: -125px;
+}
+
+.cyrcle_count_added_abonents span {
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+  margin-top: 50px;
+}
+
+
+/*-- Style for View_add_counts--*/
+
+.info_card_add {
+    width: 100%;
+    height: 195px;
+    background-color: #fff;
+    border-radius: 10px;
+    -webkit-box-shadow: 17px 18px 26px -12px rgba(0,0,0,0.75);
+    -moz-box-shadow: 17px 18px 26px -12px rgba(0,0,0,0.75);
+    box-shadow: 17px 18px 26px -12px rgba(0,0,0,0.75);
+}
+
+.info_card_add img {
+    width: 90px;
+    float: left;
+    margin: 50px 5px;
+}
+
+.info_card_add p {
+    font-family: "Open Sans";
+    font-size: 16px;
+    margin-right: 5px;
+    padding-top: 0.1px;
+}
+
+#add_count {
+    width: 100%;
+
+}
+
+#add_count label {
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-weight: bold;
+    color: #333333;
+    text-transform: uppercase;
+
+}
+
+#add_count select {
+    width: 100%;
+    height: 60px;
+    font-family: "Open Sans";
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#add_count input {
+    width: 100%;
+    height: 60px;
+    font-family: "Open Sans";
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#add_count textarea {
+    width: 100%;
+    height: 100px;
+    font-family: "Open Sans";
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+#add_count input[type='submit'] {
+    width: 100%;
+    height: 60px;
+    font-family: "Open Sans";
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #ff0000;
+    border-radius: 10px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+#add_count input[type='submit']:hover {
+    width: 100%;
+    height: 60px;
+    font-family: "Open Sans";
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #990000;
+    border-radius: 10px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+#visibility1 {
+  margin-top: -50px;
+  margin-left: -50px;
+}
+
+#visibility2 {
+  margin-top: -40px;
+  margin-left: -50px;
+}
+
+/*-- Style for page Load_number_tasks--*/
+.load_number_tasks {
+  width: 100%;
+  height: 50px;
+  background-color: #fd7474;
+  border-radius: 10px;
+  -webkit-box-shadow: 17px 18px 26px -12px rgba(0,0,0,0.75);
+  -moz-box-shadow: 17px 18px 26px -12px rgba(0,0,0,0.75);
+  box-shadow: 17px 18px 26px -12px rgba(0,0,0,0.75);
+  margin-top:15px;
+  padding-top: 15px;
+}
+
+.load_number_tasks p {
+    font-family: "Open Sans";
+    font-size: 16px;
+    margin-right: 5px;
+    padding-top: 0.1px;
+}
+
+/*Анимация для кнопки списка */
+.list_tasks_img {
+  
+       -webkit-transition: all 1s ease-in-out;
+       -moz-transition: all 1s ease-in-out;
+       -o-transition: all 1s ease-in-out;
+       -ms-transition: all 1s ease-in-out;
+       transition: all 1s ease-in-out;
+}
+
+.list_tasks_img:hover {
+  -webkit-transform: rotate(360deg) scale(1);
+
+          -moz-transform: rotate(360deg) scale(1);
+
+          -o-transform: rotate(360deg) scale(1);
+
+          -ms-transform: rotate(360deg) scale(1);
+
+          transform: rotate(360deg) scale(1);
+}
+
+#search {
+
+    width: 100%;
+    height: 60px;
+    font-family: "Open Sans";
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+
+}
+
+button {
+   background-color: Transparent;
+     border: none;
+}
+
+.message {
+  color:green;
+  font-size: 18px;
+  text-align: center;
+}
