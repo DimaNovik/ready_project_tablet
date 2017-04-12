@@ -90,7 +90,7 @@
             //добавляю данные в json массив
             file_put_contents("json/users.json", $newJsonString);
 
-            
+            mkdir("json/".$num);
          
             ?>
             <br/>

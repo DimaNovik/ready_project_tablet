@@ -323,7 +323,7 @@ border:none;
 
 .link_tasks_abonents {
   width: 108%;
-  height: 180px;
+  height: 230px;
   border: 1px solid #fff;
   background-color: #fff;
   margin: 15px -40px;
@@ -338,43 +338,15 @@ border:none;
   font-size: 18px;
 }
 
-.cyrcle_count_abonents {
-  text-align:center;
-  width: 70px;
-	height: 70px;
-	background: #e04622;
-	-moz-border-radius: 50px;
-	-webkit-border-radius: 50px;
-	border-radius: 50px;
-  margin-left:480px;
-  margin-top: -125px;
-}
 
-.cyrcle_count_abonents span {
-  font-size: 30px;
-  font-weight: bold;
-  color: #fff;
-  margin-top: 30px;
-}
-
-
-.cyrcle_count_added_abonents {
-  text-align:center;
-  width: 70px;
-  height: 70px;
-  background: #00cc00;
-  -moz-border-radius: 50px;
-  -webkit-border-radius: 50px;
-  border-radius: 50px;
-  margin-left:480px;
-  margin-top: -125px;
-}
 
 .cyrcle_count_added_abonents span {
-  font-size: 30px;
+  font-size: 80px;
   font-weight: bold;
-  color: #fff;
-  margin-top: 50px;
+  color: #00cc99;
+  float: right;
+  margin-top: -185px;
+  margin-right: 15px;
 }
 
 

@@ -190,6 +190,19 @@ if($json == '') { $count_abon = 0; } else {
                             $num_lich=$abonent['num_lich'];
                             $type=$abonent['type'];
                             $abonid=$abonent['abid'];
+                            $status=$abonent['st'];
+
+                            switch ($status) {
+                              case '0':
+                                $showStatus = 'Підключений';
+                                break;
+                              case '1':
+                                $showStatus = 'Попереджений';
+                                break;
+                              case '2':
+                                $showStatus = 'Відключений';
+                                break;
+                            }
 
                             if ($name_file_get == '') {
                               $output .= "<a href='/View_add_counts.php?conno=$conno&fio=$fio&adres=$adres&zones=$zones&num_lich=$num_lich&type=$type&file=$name_file&abid=$abonid&clerkid=$clerkid&clerkname=$clerk_name'><div class='link_tasks_abonents'>";
@@ -200,9 +213,8 @@ if($json == '') { $count_abon = 0; } else {
                             $output .= "<li><b>Ос. рахунок:</b> ".$abonent['conno']." </li>";
                             $output .= "<li><b>ПІБ споживача:</b> ".$abonent['fio']."</li>";
                             $output .= "<li><b>Адреса споживача:</b> ".$abonent['adres']."</li>";
-                            $output .= "<li><b>Зона:</b> ".$abonent['zones']."</li>";
-                            $output .= "<li class='cyrcle_count_abonents'><span>+</span></li>";
-
+                            $output .= "<li><b>Заборгованність:</b> ".$abonent['debt']."</li>";
+                            $output .= "<li><b>Стан:</b> ". $showStatus."</li>";
                             $output .= "</div></a>";
 
                           }

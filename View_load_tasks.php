@@ -107,6 +107,11 @@ if(isset($_POST['submit'])) {
 
                       $files = scandir('json/'.$clerkid);
 
+                      if(!$files) {
+                        echo "<p>Завдань немає</p>";
+                       
+                      }
+
                       $output = "<select name='name_tasks' class='placeholder'>";
 
                         foreach ($files as $file) {

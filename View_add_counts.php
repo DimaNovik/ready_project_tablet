@@ -10,7 +10,7 @@ error_reporting( E_ERROR );
  $file = $_GET['file'];
  $abid = $_GET['abid'];
  $clerk_name = $_GET['clerkname'];
-  $clerkid = $_GET['clerkid'];
+ $clerkid = $_GET['clerkid'];
 
  //$error = [];
  ?>
@@ -19,7 +19,7 @@ error_reporting( E_ERROR );
 <html>
 <head>
 
-    <meta charset="cp-1251">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -126,10 +126,10 @@ error_reporting( E_ERROR );
                 
                     if($dateValue) {
                       echo "<p><label for='date_count' id='label_date'>Дата зняття показників:</label></br>";
-                      echo "<input type='date' name='date_count' id='date_count' value=".date('Y-m-d', strtotime($dateValue))."></p>";
+                      echo "<input type='date' name='date_count' id='date_count' value=".date('Y-m-d', strtotime($dateValue))." disabled></p>";
                     } else {
                       echo "<p><label for='date_count' id='label_date'>Дата зняття показників:</label></br>";
-                      echo "<input type='date' name='date_count' id='date_count' value=".date('Y-m-d')."></p>";
+                      echo "<input type='date' name='date_count' id='date_count' value=".date('Y-m-d')." disabled></p>";
                     }
 
                     //проверяем, сколько нужно подставить максимальное количесво цифр в input
