@@ -36,7 +36,7 @@ if($json == '') { $count_abon = 0; } else {
 
     foreach($item['abonents'] as $abonent) {
 
-      if($abonent['flag'] == 0) {$count_abon++;}
+      if($abonent['value_1'] == '') {$count_abon++;}
 
     }
   }
@@ -74,7 +74,7 @@ if($json == '') { $count_abon = 0; } else {
 
     foreach($item['abonents'] as $abonent) {
 
-      if($abonent['flag'] == 0) {$count_abon++;}
+      if($abonent['value_1'] == '') {$count_abon++;}
 
     }
   }
@@ -180,7 +180,7 @@ if($json == '') { $count_abon = 0; } else {
 
                             foreach($item['abonents'] as $abonent) {
 
-                              if($abonent['flag'] == 0) {
+                              if($abonent['value_1'] == '') {
 
                               // подготавливаем переменные для передачи к странице добавления показаний
                             $conno=$abonent['conno'];
@@ -191,18 +191,52 @@ if($json == '') { $count_abon = 0; } else {
                             $type=$abonent['type'];
                             $abonid=$abonent['abid'];
                             $status=$abonent['st'];
+                            $resultCode=$abonent['resultcode'];
 
+                            // Проверяем какой статус и цвет выводить в карточке
                             switch ($status) {
                               case '0':
                                 $showStatus = 'Підключений';
+                                $poinStyle = 'point-green';
                                 break;
                               case '1':
                                 $showStatus = 'Попереджений';
+                                $poinStyle = 'point-yellow';
                                 break;
                               case '2':
                                 $showStatus = 'Відключений';
+                                $poinStyle = 'point-red';
                                 break;
                             }
+
+                            // проверяю, какой выводить статус 
+                            switch ($resultCode) {
+                              case '1':
+                                $showResult = 'Абонент не відчинив';
+                                break;
+                              case '2':
+                                $showResult = 'Абонент відсутній';
+                                break;
+                              case '3':
+                                $showResult = 'Лічильник відсутній';
+                                break;
+                              case '21':
+                                $showResult = 'Абонент раніше відключений';
+                                break;
+                              case '22':
+                                $showResult = 'Виконано відключення';
+                                break;
+                              case '23':
+                                $showResult = 'Виконано підключення';
+                                break;
+                              case '24':
+                                $showResult = 'Самовільне підкл. після відкл.';
+                                break;
+                              case '25':
+                                $showResult = 'Підозра на крадіжку';
+                                break;
+                            }
+
 
                             if ($name_file_get == '') {
                               $output .= "<a href='/View_add_counts.php?conno=$conno&fio=$fio&adres=$adres&zones=$zones&num_lich=$num_lich&type=$type&file=$name_file&abid=$abonid&clerkid=$clerkid&clerkname=$clerk_name'><div class='link_tasks_abonents'>";
@@ -210,11 +244,16 @@ if($json == '') { $count_abon = 0; } else {
                               $output .= "<a href='/View_add_counts.php?conno=$conno&fio=$fio&adres=$adres&zones=$zones&num_lich=$num_lich&type=$type&file=$name_file_get&abid=$abonid&clerkid=$clerkid&clerkname=$clerk_name'><div class='link_tasks_abonents'>";
                             }
 
-                            $output .= "<li><b>Ос. рахунок:</b> ".$abonent['conno']." </li>";
+                            $output .= "<li><b>Ос. рахунок:</b> ".$abonent['conno']."&nbsp;&nbsp;&nbsp;<b>Стан: <span class='$poinStyle'>". $showStatus."</span></b></li>";
                             $output .= "<li><b>ПІБ споживача:</b> ".$abonent['fio']."</li>";
                             $output .= "<li><b>Адреса споживача:</b> ".$abonent['adres']."</li>";
                             $output .= "<li><b>Заборгованність:</b> ".$abonent['debt']."</li>";
-                            $output .= "<li><b>Стан:</b> ". $showStatus."</li>";
+                            $output .= "<li><b>Зона:</b> ".$zones." <b>№ лічильника:</b> ".$num_lich."</li>";
+                            // если Результат Обхода не пустой, то вывожу его в карточке
+                            if($resultCode != '0' && $resultCode != '') {
+                              $output .= "<li><b>Рез. обходу:</b> ".$showResult."</li>";
+                            } 
+
                             $output .= "</div></a>";
 
                           }
@@ -226,15 +265,16 @@ if($json == '') { $count_abon = 0; } else {
                       $output .= "</ul>";
                       $output .= "</div>";
 
+
                       echo $output;
+
                     }
 
 
-           	 				?>
-
+           	 				?>                          
         </div>
-    </div>
-
+        <a href="#" id="back-to-top" title="Back to top">&uarr;</a> 
+ </div>
 </div>
 <!-- /.container -->
 
@@ -246,6 +286,9 @@ if($json == '') { $count_abon = 0; } else {
 
 <!-- Search abonent -->
 <script src="js/search.js"></script>
+
+<!-- Button to page top -->
+<script src="js/topButton.js"></script>
 
 
 

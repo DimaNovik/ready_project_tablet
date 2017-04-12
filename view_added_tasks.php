@@ -36,7 +36,7 @@ if($json == '') { $count_abon = 0; } else {
 
     foreach($item['abonents'] as $abonent) {
 
-      if($abonent['flag'] == 1) {$count_abon++;}
+      if($abonent['value_1'] != '') {$count_abon++;}
 
     }
   }
@@ -142,7 +142,7 @@ if($json == '') { $count_abon = 0; } else {
 
                             foreach($item['abonents'] as $abonent) {
 
-                              if($abonent['flag'] == 1) {
+                              if($abonent['value_1'] != '') {
 
                               // подготавливаем переменные для передачи к странице добавления показаний
                             $conno=$abonent['conno'];
@@ -157,12 +157,15 @@ if($json == '') { $count_abon = 0; } else {
                             switch ($status) {
                               case '0':
                                 $showStatus = 'Підключений';
+                                $poinStyle = 'point-green';
                                 break;
                               case '1':
                                 $showStatus = 'Попереджений';
+                                $poinStyle = 'point-yellow';
                                 break;
                               case '2':
                                 $showStatus = 'Відключений';
+                                $poinStyle = 'point-red';
                                 break;
                             }
 
@@ -172,13 +175,13 @@ if($json == '') { $count_abon = 0; } else {
                               $output .= "<a href='/View_add_counts.php?conno=$conno&fio=$fio&adres=$adres&zones=$zones&num_lich=$num_lich&type=$type&file=$name_file_get&abid=$abonid&clerkid=$clerkid&clerkname=$clerk_name'><div class='link_tasks_abonents'>";
                             }
 
-                            $output .= "<li><b>Ос. рахунок:</b> ".$abonent['conno']." </li>";
+                          
+                            $output .= "<li><b>Ос. рахунок:</b> ".$abonent['conno']."&nbsp;&nbsp;&nbsp;<b>Стан: <span class='$poinStyle'>". $showStatus."</span></b></li>";
                             $output .= "<li><b>ПІБ споживача:</b> ".$abonent['fio']."</li>";
                             $output .= "<li><b>Адреса споживача:</b> ".$abonent['adres']."</li>";
                             $output .= "<li><b>Заборгованність:</b> ".$abonent['debt']."</li>";
-                            $output .= "<li><b>Стан:</b> ". $showStatus."</li>";
+                            $output .= "<li><b>Зона:</b> ".$zones." <b>№ лічильника:</b> ".$num_lich."</li>";                
                             $output .= "<li class='cyrcle_count_added_abonents'><span>v</span></li>";
-
                             $output .= "</div></a>";
 
                           }

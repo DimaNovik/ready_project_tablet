@@ -277,6 +277,7 @@ border:none;
   box-shadow: 17px 18px 26px -12px rgba(0,0,0,0.75);
 }
 
+
 .cyrcle_count {
   text-align:center;
   width: 70px;
@@ -323,7 +324,7 @@ border:none;
 
 .link_tasks_abonents {
   width: 108%;
-  height: 230px;
+  height: 270px;
   border: 1px solid #fff;
   background-color: #fff;
   margin: 15px -40px;
@@ -332,13 +333,24 @@ border:none;
   -webkit-box-shadow: 17px 18px 26px -12px rgba(0,0,0,0.75);
   -moz-box-shadow: 17px 18px 26px -12px rgba(0,0,0,0.75);
   box-shadow: 17px 18px 26px -12px rgba(0,0,0,0.75);
+  position: relative;
 }
 
 .link_tasks_abonents li{
   font-size: 18px;
 }
 
+.link_tasks_abonents .point-green {
+  color: #00CC99;
+}
 
+.link_tasks_abonents .point-yellow {
+  color:#ff9900;
+}
+
+.link_tasks_abonents .point-red {
+  color: #FD8469;
+}
 
 .cyrcle_count_added_abonents span {
   font-size: 80px;
@@ -519,4 +531,33 @@ button {
   color:green;
   font-size: 18px;
   text-align: center;
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 9999;
+    width: 52px;
+    height: 52px;
+    text-align: center;
+    line-height: 50px;
+    background-color: #00CC99;
+    color: #444;
+    cursor: pointer;
+    border: 0;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: opacity 0.2s ease-out;
+    opacity: 0;
+    font-size:25px;
+}
+#back-to-top:hover {
+    background:#85e085;
+}
+#back-to-top.show {
+    opacity: 1;
+}
+#content {
+    height: 2000px;
 }
