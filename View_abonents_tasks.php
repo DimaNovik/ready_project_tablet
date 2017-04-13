@@ -251,7 +251,7 @@ if($json == '') { $count_abon = 0; } else {
                             $output .= "<li><b>Зона:</b> ".$zones." <b>№ лічильника:</b> ".$num_lich."</li>";
                             // если Результат Обхода не пустой, то вывожу его в карточке
                             if($resultCode != '0' && $resultCode != '') {
-                              $output .= "<li><b>Рез. обходу:</b> ".$showResult."</li>";
+                              $output .= "<li><b><span style='color:#FD7474;'>Рез. обходу:</span></b> ".$showResult."</li>";
                             } 
 
                             $output .= "</div></a>";

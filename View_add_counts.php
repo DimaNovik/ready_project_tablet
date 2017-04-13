@@ -12,8 +12,7 @@ error_reporting( E_ERROR );
  $clerk_name = $_GET['clerkname'];
  $clerkid = $_GET['clerkid'];
 
- //$error = [];
- ?>
+?>
 
 <!DOCTYPE html>
 <html>
@@ -32,8 +31,37 @@ error_reporting( E_ERROR );
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/main.css">
+   
+    <script>
+    // Скрипт определение геолокации контроллера в момент занесения показаний
+    x = navigator.geolocation;
 
+    x.getCurrentPosition(success, error);
 
+    function success(position) {
+      const mylat = position.coords.latitude;
+      const mylong = position.coords.longitude;
+      const timestamp = position.timestamp;
+    
+      console.log(mylat);
+      console.log(mylong);
+
+      let pos = document.getElementById('latitude');
+      let pos2 = document.getElementById('longitude');
+      let pos3 = document.getElementById('timestamp');
+
+      pos.value = mylat;
+      pos2.value = mylong;
+      pos3.value = timestamp;
+    }
+
+    function error() {
+      console.log('Something wrong');
+    }
+    </script>
+
+    <script src='https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyD3-JP3Sr7-Y9G796DJRvTeNSB8H7n8sIc' async defer></script>
+    
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -53,7 +81,6 @@ error_reporting( E_ERROR );
                     <p>
                         <img src="img/user.png" />
                     </p>
-
                     <p align="right"><b><? echo $fio ?></b></p>
                     <p align="right"><b><? echo $adres ?></b></p>
                     <p align="right"><b>Ос. рахунок:</b> <? echo $conno ?></p>
@@ -208,7 +235,10 @@ error_reporting( E_ERROR );
               <br/>
               <p><label for="visibility2" id="label_visibility2">Попереджений:</label>
               <input type="checkbox" name="warned" id="visibility2" value="1"/></p>
-
+              <!-- Значение геолокации для записи в json-->
+              <input type="hidden" name="latitude" id="latitude" value=""/></p>
+              <input type="hidden" name="longitude" id="longitude" value=""/></p>
+              <input type="hidden" name="timestamp" id="timestamp" value=""/></p>
 
               <p align="center"><input type="submit" id="submit" name='submit' value="ЗАНЕСТИ ПОКАЗНИКИ"></p>
 
@@ -239,6 +269,11 @@ error_reporting( E_ERROR );
               $warned = $_POST['warned'];
               $datevalue = $_POST['date_count'];
               $datevalue =  date("d.m.Y", strtotime($datevalue));
+              $latitude = $_POST['latitude'];
+              $longitude = $_POST['longitude'];
+              $timestamp = $_POST['timestamp'];
+              $currentPosition = $latitude + '&' + $longitude + '&' + $timestamp;
+
 
               // если случайно внесені показания и выбрана галочка "не выполнено", то показания очищаются
               if($resultCode <> 0) {
@@ -277,6 +312,7 @@ error_reporting( E_ERROR );
                       $data[$key][$key2][$key3]['resultcode']=$resultCode;
                       $data[$key][$key2][$key3]['warned']=$warned;
                       $data[$key][$key2][$key3]['datevalue']=$datevalue;
+                      $data[$key][$key2][$key3]['note']=$currentPosition;
 
                     }
                     else {
